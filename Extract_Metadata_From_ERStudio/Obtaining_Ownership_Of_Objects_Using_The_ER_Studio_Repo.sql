@@ -30,7 +30,7 @@ SELECT DISTINCT DECODE(DiagVer.Name,'WASTE(FOR)','WASTE',DiagVer.Name) applicati
    AND ent.entity_id           = entd.entity_id
    AND entdver.entity_display_ver_id = entd.latest_version_id
    AND diag.is_deleted         = 0
-   AND DiagVer.Name LIKE '%CLIENT'  -- A Given application
+   AND DiagVer.Name LIKE '%SPAR'  -- A Given application
    AND mdlver.name LIKE '%Physical' -- Filter only physical model by using naming pattern                       
    AND EntVer.Table_Name NOT IN ('SDE_LOGFILES','SDE_LOGFILE_DATA','CG_REF_CODES') -- Some models include these SDE objects and other
    AND SUBSTR(EntVer.Table_Name,1,5) NOT IN ('MDXT_','MDRT_','RUPD$','MLOG$');     -- Exclude MViews and MView Logs existing in some models

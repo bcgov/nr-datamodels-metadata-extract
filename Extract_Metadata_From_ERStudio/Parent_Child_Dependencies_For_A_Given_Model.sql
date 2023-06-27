@@ -1,4 +1,4 @@
-SELECT Diag_ver.Name as "Application Name"
+SELECT DISTINCT Diag_ver.Name as "Application Name"
      , mdl_ver.name as "Model Name"
      , parent_table.table_name AS "Parent Table"
      , child_table.table_name AS "Child Table"
@@ -36,9 +36,10 @@ SELECT Diag_ver.Name as "Application Name"
    AND rel_ver.parent_entity_ver_id = parent_table.entity_ver_id
    AND rel_ver.child_entity_ver_id = child_table.entity_ver_id
    AND diag.is_deleted = 0
-   AND mdl_ver.name = 'CLIENT_Physical'  -- A given Model name
-   AND smdl_ver.Name = 'Main Model'      -- It assumes the name 'Main Model', as it is the default value assigned by ER Studio
- ORDER BY 1, 4;
+   AND Diag_ver.Name LIKE 'ACAT%'
+--   AND mdl_ver.name = '%FTA%'  -- A given Model name
+--   AND smdl_ver.Name = 'Main Model'      -- It assumes the name 'Main Model', as it is the default value assigned by ER Studio
+ ORDER BY 1, 3;
 
 -- Query modifiers
   AND parent_table.table_name = 'physical table name' -- When present, it will return all "children" of a given table
