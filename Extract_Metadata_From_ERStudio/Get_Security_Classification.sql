@@ -15,7 +15,7 @@ SELECT p_model.object_name                                            model_name
    AND (upper(current_value) LIKE 'PROTECTED%' OR upper(current_value) = 'PUBLIC')
    AND clmn.parent_object_key = p_table.object_key 
    AND p_table.parent_object_key = p_model.object_key 
---   AND skm.object_name = 'CONTACT_FIRST_NAME'
---   AND p_table.object_name = 'RESEARCH_CONTACT'
+--   AND clmn.object_name = 'CONTACT_FIRST_NAME'
+   AND p_table.object_name = 'RESEARCH_CONTACT'
    AND p_model.object_name LIKE 'RESPROJ%'
  ORDER BY app_name, table_name, column_name
