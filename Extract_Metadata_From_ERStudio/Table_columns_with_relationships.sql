@@ -8,6 +8,7 @@ WITH table_cols AS ---from prior starter query in Comments_For_Tables_And_Column
          REPLACE(REPLACE(entity_ver.definition,CHR(10),' '),CHR(13),NULL) AS Table_Definition,
          Attribute_Ver.Sequence_Number AS Order_seq,
          Attribute_Ver.Column_Name AS Column_Name,
+         Attribute_Ver.ATTRIBUTE_ID,
          REPLACE(REPLACE(Attribute_Ver.Definition,CHR(10),' '),CHR(13),NULL) AS Column_Definition,
          Attribute_Ver.DATA_TYPE,
          Attribute_Ver.LENGTH,
@@ -15,7 +16,7 @@ WITH table_cols AS ---from prior starter query in Comments_For_Tables_And_Column
          Attribute_Ver.IS_IDENTITY_COLUMN,
          Attribute_Ver.PRIMARY_KEY,
          '<<<<---->>>>' AS columns_ended
-  FROM app_erstudio.Diagram,
+	 FROM app_erstudio.Diagram,
        app_erstudio.Diagram_Ver,
        app_erstudio.Entity,
        app_erstudio.Entity_Ver,
@@ -25,16 +26,7 @@ WITH table_cols AS ---from prior starter query in Comments_For_Tables_And_Column
        app_erstudio.SubModel,
        app_erstudio.Attribute,
        app_erstudio.Attribute_Ver
-  WHERE (Entity.Latest_Version_ID = Entity_Ver.Entity_Ver_ID 
-	  AND Model.Model_ID = Entity.Model_ID 
-	  AND SubModel.Latest_Version_ID = SubModel_Ver.SubModel_Ver_ID 
-	  AND Model.Model_ID = SubModel.Model_ID 
-	  AND Diagram_Ver.Diagram_ID = Model.Diagram_ID 
-	  AND model.latest_version_id = model_ver.model_ver_id 
-	  AND Diagram.Latest_Version_ID = Diagram_Ver.Diagram_Ver_ID 
-	  AND Diagram.is_deleted = 0 
-	  AND Attribute_Ver.Attribute_Ver_ID = Attribute.Latest_Version_ID 
-	  AND Attribute.Entity_ID = Entity.Entity_ID)
+  WHERE (Entity.Latest_Version_ID = Entity_Ver.Entity_Ver_ID AND Model.Model_ID = Entity.Model_ID AND SubModel.Latest_Version_ID = SubModel_Ver.SubModel_Ver_ID AND Model.Model_ID = SubModel.Model_ID AND Diagram_Ver.Diagram_ID = Model.Diagram_ID AND model.latest_version_id = model_ver.model_ver_id AND Diagram.Latest_Version_ID = Diagram_Ver.Diagram_Ver_ID AND Diagram.is_deleted = 0 AND Attribute_Ver.Attribute_Ver_ID = Attribute.Latest_Version_ID AND Attribute.Entity_ID = Entity.Entity_ID)
 ),
 relations_child AS
 (
@@ -98,16 +90,17 @@ relations_par AS
             ON (rv.RELATIONSHIP_VER_ID = r.LATEST_VERSION_ID
            AND r.RELATIONSHIP_ID = rv.RELATIONSHIP_ID)
 )
-SELECT DISTINCT tc.*,
+, meta_vw as 
+(SELECT DISTINCT tc.*,
        rchild.PARENT_TABLE,
        rchild.CHILDOPTIONALITYID AS cardi_cihld,
        rchild.NAME AS constR_name_child,
-       '<<--Children ended-->>' child_ended,
+       '<<--Parent tables ended-->>' child_ended,
        rpar.CHILD_TABLE,
        rpar.NAME AS constr_name_par,
        rpar.CHILDOPTIONALITYID AS cardi_par,
-       rchild.rn_rel,
-       rpar.rn_rel
+       rchild.rn_rel rn_rel_1,
+       rpar.rn_rel rn_rel_2
 FROM table_cols tc
   LEFT OUTER JOIN relations_child rchild
                ON (tc.Table_Name = rchild.child_table
@@ -117,11 +110,14 @@ FROM table_cols tc
                ON (tc.Table_Name = rpar.parent_table
               AND tc.model_id = rpar.Model_ID
               AND tc.ORDER_SEQ = rpar.rn_rel)
-WHERE 1 = 1
-AND   tc.Diagram_Name LIKE '%RRS%'
-AND   tc.Model_Name = 'Physical'
-AND   tc.Table_Name = 'ROAD_APPLICATION'
-ORDER BY tc.TABLE_NAME,
-         tc.ORDER_SEQ,
-         rchild.rn_rel,
-         rpar.rn_rel;
+)
+Select distinct table_name, TABLE_DEFINITION from 
+meta_vw where 1=1
+AND Diagram_Name LIKE '%RRS%'
+AND   Model_Name = 'Physical'
+AND   Table_Name = 'ROAD_APPLICATION'
+-- ORDER BY TABLE_NAME,
+--          ORDER_SEQ,
+--          rn_rel_1,
+--          rn_rel_2
+;
