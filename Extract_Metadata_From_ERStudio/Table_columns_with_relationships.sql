@@ -1,4 +1,4 @@
-WITH table_cols AS
+WITH table_cols AS ---from prior starter query in Comments_For_Tables_And_Columns_For_A_Given_Model_In_ERStudio.sql
 (
   SELECT Diagram_Ver.Name AS Diagram_Name,
          model_ver.Model_ID,
@@ -25,7 +25,16 @@ WITH table_cols AS
        app_erstudio.SubModel,
        app_erstudio.Attribute,
        app_erstudio.Attribute_Ver
-  WHERE (Entity.Latest_Version_ID = Entity_Ver.Entity_Ver_ID AND Model.Model_ID = Entity.Model_ID AND SubModel.Latest_Version_ID = SubModel_Ver.SubModel_Ver_ID AND Model.Model_ID = SubModel.Model_ID AND Diagram_Ver.Diagram_ID = Model.Diagram_ID AND model.latest_version_id = model_ver.model_ver_id AND Diagram.Latest_Version_ID = Diagram_Ver.Diagram_Ver_ID AND Diagram.is_deleted = 0 AND Attribute_Ver.Attribute_Ver_ID = Attribute.Latest_Version_ID AND Attribute.Entity_ID = Entity.Entity_ID)
+  WHERE (Entity.Latest_Version_ID = Entity_Ver.Entity_Ver_ID 
+	  AND Model.Model_ID = Entity.Model_ID 
+	  AND SubModel.Latest_Version_ID = SubModel_Ver.SubModel_Ver_ID 
+	  AND Model.Model_ID = SubModel.Model_ID 
+	  AND Diagram_Ver.Diagram_ID = Model.Diagram_ID 
+	  AND model.latest_version_id = model_ver.model_ver_id 
+	  AND Diagram.Latest_Version_ID = Diagram_Ver.Diagram_Ver_ID 
+	  AND Diagram.is_deleted = 0 
+	  AND Attribute_Ver.Attribute_Ver_ID = Attribute.Latest_Version_ID 
+	  AND Attribute.Entity_ID = Entity.Entity_ID)
 ),
 relations_child AS
 (
