@@ -3,7 +3,7 @@ SELECT diagram_Ver.Name as "Diagram Name"
      , subModel_Ver.Name as "Submodel Name"
      , entity_Ver.Name as "Entity Name"
      , entity_Ver.Table_Name as "Table Name"
-     , entity_ver.definition
+     , replace(replace(entity_ver.definition,chr(10),' '),chr(13),null) as "Table Definition"
   FROM app_erstudio.diagram
     , app_erstudio.diagram_ver
     , app_erstudio.entity
