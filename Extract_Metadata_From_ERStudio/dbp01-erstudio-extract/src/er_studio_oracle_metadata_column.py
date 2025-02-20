@@ -137,7 +137,7 @@ def write_column_comments(model, column_comments):
         logging.info(f"No column comments found for {model}. Skipping file creation.")
 
 # SQL file for column comments
-sql_file = 'Get_Column_Comment_Statements.sql'
+sql_file = 'Get_Column_Comment_Statements_v2.sql'
 
 # Main execution
 def main():

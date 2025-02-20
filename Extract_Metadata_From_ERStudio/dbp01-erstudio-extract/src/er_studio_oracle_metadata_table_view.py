@@ -146,8 +146,8 @@ def write_all_comments(model, table_comments, view_comments):
 
 # List of SQL files
 sql_files = [
-    'Get_Table_Comment_Statements.sql',
-    'Get_View_Comment_Statements.sql'
+    'Get_Table_Comment_Statements_v2.sql',
+    'Get_View_Comment_Statements_v2.sql'
 ]
 
 # Main execution

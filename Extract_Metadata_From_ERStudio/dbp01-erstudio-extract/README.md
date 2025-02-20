@@ -1,4 +1,4 @@
-# ERStudio Metadata Extract scripts
+# DBP01 ERStudio Metadata Extract scripts
 
 These scripts were created to pull any column, view or table comments from ER Studio database to be inserted
 into DBP01 operational database. The work was carried out with the help of DBA's. These scripts could be used
@@ -13,9 +13,9 @@ in future metadata extraction from ER Studio database to insert into operational
     │   └── Get_Table_View_Comment_Statements_output/
     │       └── {model}_all_comments.sql
     ├── sql/
-    │   ├── Get_Column_Comment_Statements.sql
-    │   ├── Get_Table_Comment_Statements.sql
-    │   └── Get_View_Comment_Statements.sql
+    │   ├── Get_Column_Comment_Statements_v2.sql
+    │   ├── Get_Table_Comment_Statements_v2.sql
+    │   └── Get_View_Comment_Statements_v2.sql
     ├── src/
     │   ├── __init__.py
     │   ├── db_connection.py
