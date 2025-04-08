@@ -32,7 +32,6 @@ def get_db_connection():
     logging.info(f"ORACLE_DRIVER: {env_vars.get('ORACLE_DRIVER')}")
     logging.info(f"ORACLE_DSN: {env_vars.get('ORACLE_DSN')}")
     logging.info(f"ORACLE_USER: {env_vars.get('ORACLE_USER')}")
-    logging.info(f"ORACLE_PASSWORD: {mask_password(env_vars.get('ORACLE_PASSWORD'))}")
     logging.info(f"TNS_ADMIN: {env_vars.get('TNS_ADMIN')}")
 
     # Set TNS_ADMIN environment variable
@@ -46,7 +45,7 @@ def get_db_connection():
         f"PWD={env_vars.get('ORACLE_PASSWORD')}"
     )
 
-    logging.info(f"Attempting to connect with: {mask_connection_string(connection_string)}")
+    logging.info(f"Attempting to connect")
 
     try:
         conn = pyodbc.connect(connection_string)
