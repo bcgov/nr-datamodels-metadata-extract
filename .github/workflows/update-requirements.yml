@@ -25,7 +25,7 @@ jobs:
 
       - name: Generate requirements.txt
         working-directory: Extract_Metadata_From_ERStudio/dbp01-erstudio-extract
-        run: pipenv lock -r > requirements.txt
+        run: pipenv requirements > requirements.txt
 
       - name: Commit and push changes
         run: |
