@@ -6,7 +6,7 @@ azure-identity==1.23.0; python_version >= '3.9'
 azure-keyvault-secrets==4.10.0; python_version >= '3.9'
 beautifulsoup4==4.13.4; python_full_version >= '3.7.0'
 boto3==1.39.4; python_version >= '3.9'
-botocore==1.39.3; python_version >= '3.9'
+botocore==1.39.4; python_version >= '3.9'
 bs4==0.0.2
 cached-property==2.0.1
 certifi==2025.7.9; python_version >= '3.7'
