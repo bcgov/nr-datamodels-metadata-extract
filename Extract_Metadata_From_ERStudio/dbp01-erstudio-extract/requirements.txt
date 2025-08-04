@@ -14,7 +14,7 @@ beautifulsoup4==4.13.4; python_full_version >= '3.7.0'
 boto3==1.39.17; python_version >= '3.9'
 botocore==1.39.17; python_version >= '3.9'
 bs4==0.0.2
-cached-property==1.5.2
+cached-property==2.0.1
 cachetools==5.5.2; python_version >= '3.7'
 certifi==2025.7.14; python_version >= '3.7'
 cffi==1.17.1; python_version >= '3.8'
