@@ -29,7 +29,7 @@ cryptography==45.0.6; python_version >= '3.7' and python_full_version not in '3.
 daff==1.4.2
 dbt-adapters==1.17.3; python_full_version >= '3.9.0'
 dbt-common==1.27.1; python_version >= '3.9'
-dbt-core==1.10.7; python_version >= '3.9'
+dbt-core==1.10.15; python_version >= '3.9'
 dbt-extractor==0.6.0; python_version >= '3.9'
 dbt-protos==1.0.348; python_version >= '3.6'
 dbt-semantic-interfaces==0.9.0; python_version >= '3.8'
