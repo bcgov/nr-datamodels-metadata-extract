@@ -36,7 +36,7 @@ dbt-semantic-interfaces==0.10.3; python_version >= '3.8'
 deepdiff==8.6.1; python_version >= '3.9'
 diff-cover==10.2.0; python_version >= '3.10'
 dnspython==2.8.0; python_version >= '3.10'
-dsnparse==0.1.15
+dsnparse==0.4.0
 durationpy==0.10
 email-validator==2.3.0; python_version >= '3.8'
 filelock==3.20.3; python_version >= '3.10'
