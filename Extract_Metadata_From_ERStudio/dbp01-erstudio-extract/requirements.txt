@@ -71,7 +71,7 @@ kubernetes==34.1.0; python_version >= '3.6'
 leather==0.4.1
 markdown-it-py==4.0.0; python_version >= '3.10'
 markupsafe==3.0.3; python_version >= '3.9'
-mashumaro[msgpack]==3.10; python_version >= '3.8'
+mashumaro[msgpack]==3.18; python_version >= '3.8'
 mdurl==0.1.2; python_version >= '3.7'
 memory-profiler==0.61.0; python_version >= '3.5'
 more-itertools==10.8.0; python_version >= '3.9'
