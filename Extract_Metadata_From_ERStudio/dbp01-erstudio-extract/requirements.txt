@@ -92,7 +92,7 @@ parsedatetime==2.6
 pathspec==0.12.1; python_version >= '3.8'
 platformdirs==4.5.1; python_version >= '3.10'
 pluggy==1.6.0; python_version >= '3.9'
-proto-plus==1.27.0; python_version >= '3.7'
+proto-plus==1.27.1; python_version >= '3.7'
 protobuf==6.33.5; python_version >= '3.9'
 psutil==7.2.1; python_version >= '3.6'
 pyasn1==0.6.2; python_version >= '3.8'
