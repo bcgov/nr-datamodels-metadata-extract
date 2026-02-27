@@ -35,7 +35,7 @@ in future metadata extraction from ER Studio database to insert into operational
 
 ## Prerequisites
 
-- Python 3.8.10
+- Python 3.11
 - Required Python packages (refer to a requirements.txt or pipfile)
 - Necessary permissions and credentials for Oracle database
 
