@@ -7,30 +7,35 @@ on:
 
 jobs:
   update-requirements:
+    if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
-      actions: read
+
+    defaults:
+      run:
+        working-directory: Extract_Metadata_From_ERStudio/dbp01-erstudio-extract
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install pipenv
         run: pip install pipenv
 
-      - name: Generate requirements.txt
-        working-directory: Extract_Metadata_From_ERStudio/dbp01-erstudio-extract
-        run: pipenv requirements > requirements.txt
+      - name: Export requirements.txt from Pipfile.lock
+        run: pipenv requirements --exclude-markers > requirements.txt
 
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Extract_Metadata_From_ERStudio/dbp01-erstudio-extract/requirements.txt
-          git commit -m "chore: update requirements.txt from Pipfile.lock" || echo "No changes to commit"
+          git add requirements.txt
+          git commit -m "chore: sync requirements.txt from Pipfile.lock" || exit 0
           git push
