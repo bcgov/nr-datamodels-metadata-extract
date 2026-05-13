@@ -69,7 +69,7 @@ jsonschema-specifications==2025.9.1; python_version >= '3.9'
 keyring==25.7.0; python_version >= '3.9'
 kubernetes==35.0.0; python_version >= '3.6'
 leather==0.4.1
-markdown-it-py==4.0.0; python_version >= '3.10'
+markdown-it-py==4.2.0; python_version >= '3.10'
 markupsafe==3.0.3; python_version >= '3.9'
 mashumaro[msgpack]==3.10; python_version >= '3.8'
 mdurl==0.1.2; python_version >= '3.7'
