@@ -86,7 +86,7 @@ oauthlib==3.3.1; python_version >= '3.8'
 openmetadata-ingestion==1.12.3.0; python_version >= '3.9'
 ordered-set==4.1.0; python_version >= '3.7'
 orderly-set==5.5.0; python_version >= '3.8'
-packaging==26.0; python_version >= '3.8'
+packaging==26.2; python_version >= '3.8'
 pandas==2.3.3; python_version >= '3.9'
 parsedatetime==2.6
 pathspec==1.0.4; python_version >= '3.8'
