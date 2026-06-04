@@ -71,7 +71,7 @@ jsonpointer==3.1.1; python_version >= '3.10'
 jsonschema==4.26.0; python_version >= '3.10'
 jsonschema-specifications==2025.9.1; python_version >= '3.9'
 keyring==25.7.0; python_version >= '3.9'
-kubernetes==36.0.1; python_version >= '3.10'
+kubernetes==36.0.2; python_version >= '3.10'
 kubernetes==36.0.1; python_version >= '3.6'
 leather==0.4.1
 markdown-it-py==4.2.0; python_version >= '3.10'
