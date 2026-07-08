@@ -1,6 +1,6 @@
 -i https://pypi.org/simple
 agate==1.14.2
-aiohappyeyeballs==2.6.2; python_version >= '3.10'
+aiohappyeyeballs==2.7.1; python_version >= '3.10'
 aiohttp==3.14.1; python_version >= '3.9'
 aiosignal==1.4.0; python_version >= '3.9'
 annotated-types==0.7.0; python_version >= '3.8'
