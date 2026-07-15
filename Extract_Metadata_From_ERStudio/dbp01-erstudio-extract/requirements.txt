@@ -14,7 +14,7 @@ azure-keyvault-secrets==4.11.0; python_version >= '3.9'
 babel==2.18.0; python_version >= '3.8'
 backports.tarfile==1.2.0; python_version >= '3.8'
 beautifulsoup4==4.15.0; python_full_version >= '3.7.0'
-boto3==1.43.38; python_version >= '3.9'
+boto3==1.43.48; python_version >= '3.9'
 botocore==1.43.26; python_version >= '3.9'
 bs4==0.0.2
 cached-property==2.0.1
