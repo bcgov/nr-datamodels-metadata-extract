@@ -31,7 +31,7 @@ dbt-common==1.39.0
 dbt-core==1.12.3
 dbt-core-experimental-parser==2.0.0b2
 dbt-extractor==0.6.0
-dbt-protos==1.0.565
+dbt-protos==1.0.615
 dbt-semantic-interfaces==0.9.0
 deepdiff==8.6.2
 diff-cover==10.5.1
