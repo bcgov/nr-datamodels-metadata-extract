@@ -43,7 +43,7 @@ google-api-core[grpc]==2.34.0
 google-auth==2.57.0
 google-cloud-secret-manager==2.24.0
 google-crc32c==1.8.0
-googleapis-common-protos[grpc]==1.75.2
+googleapis-common-protos[grpc]==1.76.0
 greenlet==3.5.5
 grpc-google-iam-v1==0.14.6
 grpcio==1.83.1
