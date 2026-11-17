@@ -88,7 +88,7 @@ networkx==3.6.1
 numpy==2.4.6
 oauthlib==4.0.1
 openmetadata-ingestion==2.0.0.0
-opentelemetry-api==1.45.1
+opentelemetry-api==1.45.2
 orderly-set==5.5.0
 packaging==26.3
 pandas==3.0.6
